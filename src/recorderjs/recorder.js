@@ -2,8 +2,6 @@ import Worker from './record.worker.js';
 
 export default function(window){
 
-  // var WORKER_PATH = 'js/recorderjs/recorderWorker.js';
-
   let Recorder = function(source, cfg){
     let config = cfg || {};
     let bufferLen = config.bufferLen || 4096;
