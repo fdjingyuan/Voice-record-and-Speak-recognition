@@ -6,9 +6,20 @@ __pycache__/
 # C extensions
 *.so
 
+#build file
+dist/
+
+#trash file
+.DS_Store
+
+#tmp
+tmp/*.wav
+
+#data
+data/raw
+
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
@@ -35,6 +46,7 @@ node_modules
 # Installer logs
 pip-log.txt
 pip-delete-this-directory.txt
+runs/
 
 # Unit test / coverage reports
 htmlcov/
