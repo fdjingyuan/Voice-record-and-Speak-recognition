@@ -20,7 +20,7 @@ class WavRecgnition(object):
     def classify(self, samples):
         audio = Audio(samples=samples)
         mel = audio.mel_feature(resize=const.FEATURE_SIZE)
-        mel = (mel - const.MEL_MEAN) / const.MEL_MEAN
+        mel = (mel - const.MEL_MEAN) / const.MEL_STD
         mel = mel.astype(np.float32)
         # 通道和batch
         mel = mel[np.newaxis, np.newaxis, :, :]

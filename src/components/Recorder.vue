@@ -252,7 +252,7 @@
             startRecord() {
                 this.toggleRecording();
 
-                setTimeout(this.toggleRecording, 2500);
+                setTimeout(this.toggleRecording, 2002);
             },
             uploadAudio() {
                 // check if the first time
@@ -269,31 +269,32 @@
                 // TODO: upload and analyse
                 this.isAnalysing = true;
 
-//                var reader = new FileReader();
-//                reader.readAsDataURL(this.curAudioBlob);
-//                reader.onloadend = () => {
-//                    this.b64Content = reader.result;
+                var reader = new FileReader();
+                reader.readAsDataURL(this.curAudioBlob);
+                reader.onloadend = () => {
+                    this.b64Content = reader.result;
+
+                    //this.$http.post('http://localhost:5000/api', this.b64Content).then(
+                    this.$http.post('/api', this.b64Content).then(
+                        response => {
+                            this.isAnalysing = false;
+                            this.resultLabel = response.body['result'];
+                            this.recIndex++;
+                        },
+                        response => {
+                            console.log('Analysis failed.');
+                            console.log(response.status);
+                        }
+                    );
+                };
+
+
+//                setTimeout(() => {
+//                    this.isAnalysing = false;
+//                    this.resultLabel = 'xxx';
+//                    this.recIndex++;
 //
-//                    this.$http.post('/api', this.b64Content).then(
-//                        response => {
-//                            this.isAnalysing = false;
-//                            this.resultLabel = response.body['result'];
-//                            this.recIndex++;
-//                        },
-//                        response => {
-//                            console.log('Analysis failed.');
-//                            console.log(response.status);
-//                        }
-//                    );
-//                };
-
-
-                setTimeout(() => {
-                    this.isAnalysing = false;
-                    this.resultLabel = 'xxx';
-                    this.recIndex++;
-
-                }, 2000);
+//                }, 2000);
             }
         },
         computed: {

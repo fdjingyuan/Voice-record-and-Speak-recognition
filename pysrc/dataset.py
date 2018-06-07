@@ -143,7 +143,7 @@ class FudanVoiceDataset(torch.utils.data.Dataset):
         sample['mel'] = audio.mel_feature(resize=const.FEATURE_SIZE)
         if self.norm:
             sample['mfcc'] = (sample['mfcc'] - const.MFCC_MEAN) / const.MFCC_STD
-            sample['mel'] = (sample['mel'] - const.MEL_MEAN) / const.MEL_MEAN
+            sample['mel'] = (sample['mel'] - const.MEL_MEAN) / const.MEL_STD
         sample['label'] = torch.tensor(int(filename.split('-')[-2]), dtype=torch.int64)
         sample['mfcc'] = sample['mfcc'].astype(np.float32)
         sample['mel'] = sample['mel'].astype(np.float32)
