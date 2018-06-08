@@ -125,7 +125,7 @@
 
         methods: {
             updateAnalysers(time) {
-                // TODO: draw the analyser here
+                // draw the analyser here
                 if (!analyserContext) {
                     let canvas = document.getElementById("analyser");
                     canvasWidth = canvas.width;
@@ -191,7 +191,7 @@
 
                 // the ONLY time gotBuffers is called is right after a new recording is completed -
                 // so here's where we should set up the download.
-                // TODO: set up upload here
+                // set up upload here
                 this.audioRecorder.exportWAV(this.doneEncoding);
             },
 
@@ -264,9 +264,7 @@
                     return;
                 }
 
-                // TODO: check if played.
-
-                // TODO: upload and analyse
+                // upload and analyse
                 this.isAnalysing = true;
 
                 var reader = new FileReader();

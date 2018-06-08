@@ -29,6 +29,7 @@ file = None
 #     response.headers['Access-Control-Allow-Headers'] = allow_headers
 #     return response
 
+
 @app.route('/api', methods=['GET', 'POST'])
 def rec():
     base64_data = request.get_data().strip()
@@ -48,7 +49,7 @@ def rec():
 @app.route('/<path:path>')
 def catch_all(path):
     path = path.strip()
-    #
+    #worker.js should return to the path of js not "index.html"
     if path.endswith('js'):
         return render_template(path)
     return render_template("index.html")
