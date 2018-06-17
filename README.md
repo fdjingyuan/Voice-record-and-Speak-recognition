@@ -1,14 +1,19 @@
 # voice_pj
 
-#
-
-
 > A Vue.js project for word voice recognition
+
+Since this project has been build, you just need to install python dependencies and run the server if you want to use the application.
 ## Python dependencies
 
 ``` bash
 pip install -r requirements.txt
 ```
+## server
+``` bash
+python -m pysrc.server
+```
+
+If you modify the code and want to re-run it, try as following:
 
 ## Build Setup
 
@@ -44,7 +49,4 @@ python -m script.cal_mean_std.py
 #train
 python -m pysrc.train
 
-
-#server
-python -m pysrc.server
 
