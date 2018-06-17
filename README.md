@@ -3,7 +3,12 @@
 #
 
 
-> A Vue.js project
+> A Vue.js project for word voice recognition
+## Python dependencies
+
+``` bash
+pip install -r requirements.txt
+```
 
 ## Build Setup
 
@@ -11,14 +16,12 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
-
 # build for production with minification
 npm run build
 
-# build for production and view the bundle analyzer report
-npm run build --report
+# serve with hot reload at localhost:8080
+npm run dev
+
 
 # run e2e tests
 npm run e2e
@@ -28,7 +31,8 @@ npm test
 ```
 
 
-#train model
+## train model
+``` bash
 # pre-process
 ## deal with data
 python -m script.gen_data 
