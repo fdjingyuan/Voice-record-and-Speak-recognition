@@ -2,13 +2,14 @@ import torch
 import torch.utils.data
 import numpy as np
 # import matplotlib.pyplot as plt
-from skimage import io, transform
+# from skimage import io, transform
 from pysrc import const
 import random
 import librosa
 from scipy import signal
 import IPython.display as ipd
 from glob import glob
+import cv2
 
 
 class Audio(object):
@@ -41,7 +42,7 @@ class Audio(object):
         mfcc = np.hstack(mfcc)
         mfcc = mfcc.astype(np.float32)
         if resize:
-            mfcc = transform.resize(mfcc, (resize, resize), preserve_range=True, mode='reflect')
+            mfcc = cv2.resize(mfcc, (resize, resize))
         return mfcc
 
     def mel_feature(self, n_mels=40, normalization=False, resize=None):
@@ -52,7 +53,8 @@ class Audio(object):
             spectrogram = spectrogram.spectrogram()
             spectrogram -= spectrogram
         if resize:
-            spectrogram = transform.resize(spectrogram, (resize, resize), preserve_range=True, mode='reflect')
+            # spectrogram = transform.resize(spectrogram, (resize, resize), preserve_range=True, mode='reflect')
+            spectrogram = cv2.resize(spectrogram, (resize, resize))
         return spectrogram
 
     def plot_specgram(self, window_size=20, step_size=10, eps=1e-10):

@@ -56,4 +56,5 @@ def catch_all(path):
 
 
 if __name__ == '__main__':
+    print("run..")
     app.run(debug=False)

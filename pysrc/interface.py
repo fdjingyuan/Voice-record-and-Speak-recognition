@@ -5,7 +5,6 @@ from pysrc.utils import parse_args_and_merge_const
 import torch
 import torch.nn.functional as F
 
-
 class WavRecgnition(object):
 
     def __init__(self, use_device='cpu'):
