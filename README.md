@@ -1,12 +1,12 @@
 ## Voice Recogition
 
-<<<<<<< HEAD
 
-This project is a voice recogition based on PyTorch, Flask and Vue.js. We trained ResNet and VGG networks in PyTorch for word classifcation and achieved over 99% accuracy. To show the result, we designed a web application which can record, play and recognize audio using Vue.js and Flask.
+This project is a voice recogition based on PyTorch, Flask and Vue.js. This project trained ResNet and VGG networks in PyTorch for word classifcation and achieved over 99% accuracy. 
 
-![](https://gitee.com/hzy46/voice-recognition/raw/master/images/show.png)
+There is also a friendly front-enf for web application which can record, play and recognize audio using Vue.js and Flask.
+
+![](https://github.com/fdjingyuan/Voice-record-and-Speak-recognition/blob/master/img/recognize.jpg)
 =======
-> A Vue.js project for word voice recognition
 
 Since this project has been build, you just need to install python dependencies and run the server if you want to use the application.
 ## Python dependencies
@@ -14,55 +14,36 @@ Since this project has been build, you just need to install python dependencies 
 ``` bash
 pip install -r requirements.txt
 ```
-## server
+## Run the server
 ``` bash
 python -m pysrc.server
 ```
+Enter http://127.0.0.1:5000/ to access the web application.
+
+
 
 If you modify the code and want to re-run it, try as following:
->>>>>>> e15f56317cf0e246c16514141bcaec0eba49164f
 
-
-### Requirements
-
-Python3, PyTorch >= 0.4.0, Flask and Vue.js.
-
-Please install all the Python dependencies using:
-
-```
-pip install -r requirements.txt
-```
-
-### Quick Start
-
-First, run the front-end server:
+### Run front-end
+First you need to download and install node. js, then
 
 ```
 # install dependencies
 npm install
 
-<<<<<<< HEAD
-# build
-npm run build
-
-# serve with hot reload at localhost:8080
-npm run dev
-```
-
-Then run the api server:
-```
-python -m pysrc.server
-```
-
-Please visit localhost:8080 to test the application.
-=======
 # build for production with minification
 npm run build
 
 # serve with hot reload at localhost:8080
 npm run dev
+```
 
->>>>>>> e15f56317cf0e246c16514141bcaec0eba49164f
+Then run the back-end server:
+```
+python -m pysrc.server
+```
+
+
 
 
 ### Train a Model
@@ -71,15 +52,9 @@ If you want to train your own model, please refer to the following steps.
 
 #### Preprocess
 
-<<<<<<< HEAD
 ```
-# generate data
-=======
-## train model
-``` bash
 # pre-process
 ## deal with data
->>>>>>> e15f56317cf0e246c16514141bcaec0eba49164f
 python -m script.gen_data 
 
 # split data to train.txt and test.txt
@@ -97,8 +72,6 @@ python -m pysrc.train
 
 Models will be saved to a folder named "models/".
 
+#### Algorithm framework
 
-<<<<<<< HEAD
-
-=======
->>>>>>> e15f56317cf0e246c16514141bcaec0eba49164f
+![](https://github.com/fdjingyuan/Voice-record-and-Speak-recognition/blob/master/img/model.png)
