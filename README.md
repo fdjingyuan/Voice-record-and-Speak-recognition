@@ -1,4 +1,4 @@
-## Voice Recogition
+# Voice Recogition
 
 
 This project is a voice recogition based on PyTorch, Flask and Vue.js. This project trained ResNet and VGG networks in PyTorch for word classifcation and achieved over 99% accuracy. 
@@ -6,22 +6,21 @@ This project is a voice recogition based on PyTorch, Flask and Vue.js. This proj
 There is also a friendly front-enf for web application which can record, play and recognize audio using Vue.js and Flask.
 
 ![](https://github.com/fdjingyuan/Voice-record-and-Speak-recognition/blob/master/img/recognize.jpg)
-=======
 
+## Directly running the application
 Since this project has been build, you just need to install python dependencies and run the server if you want to use the application.
-## Python dependencies
-
+### Python dependencies
 ``` bash
 pip install -r requirements.txt
 ```
-## Run the server
+### Run the server
 ``` bash
 python -m pysrc.server
 ```
 Enter http://127.0.0.1:5000/ to access the web application.
 
 
-
+## Modify for your own project
 If you modify the code and want to re-run it, try as following:
 
 ### Run front-end
